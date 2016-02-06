@@ -1,0 +1,25 @@
+default
+{
+    touch_start (integer num)
+    {
+        string person = llDetectedName(0);
+        integer touched = llDetectedTouchFace(0);
+        string face;
+        
+        if (touched == 0) {
+            face = "Top";
+        } else if (touched == 1) {
+            face = "Back";
+        } else if (touched == 2) {
+           face = "Left";
+        } else if (touched == 3) {
+            face = "Front";
+        } else if (touched == 4) {
+            face = "Right";
+        } else {
+            face = "Bottom";
+        }
+        
+        llSay(0, person + " touched the " + face + " face");
+    }
+}
